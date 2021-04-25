@@ -1,0 +1,38 @@
+/* IMPORTANT: Multiple classes and nested static classes are supported */
+
+import java.util.*;
+
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        
+        Scanner s = new Scanner(System.in);
+        int N = s.nextInt();
+        long sum = 0L;
+        long num = 10000000L;
+        int result = -1;
+       
+        long[] arr = new long[N];
+
+        for(int i=0; i<N; i++){
+
+            long a = s.nextLong();
+            arr[i] = a;
+            sum = sum + a;
+
+        }
+
+        for(int j=0; j<arr.length; j++){
+
+            long temp = sum - arr[j];
+
+            if((temp%7)==0 && num>arr[j]){
+
+                num = arr[j];
+                result = j;
+            }
+        }
+
+        System.out.println(result); 
+    }
+}
